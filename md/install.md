@@ -12,6 +12,12 @@ yarn config set registry https://registry.npm.taobao.org/
 npm install -g yrm
 yrm ls
 
+###### https://cn.vuejs.org/v2/guide/
+vue文档
+
+###### https://router.vuejs.org/zh/
+vue-router文档
+
 ###### vue-cli
 https://cli.vuejs.org/zh/guide/installation.html
 npm install -g @vue/cli
