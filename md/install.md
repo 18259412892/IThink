@@ -39,3 +39,6 @@ https://www.sass.hk/docs/
 ###### babel
 [https://www.babeljs.cn](https://www.babeljs.cn/)
 
+
+###### github合并操作
+https://blog.csdn.net/qq_30607843/article/details/84404000
