@@ -1,0 +1,12 @@
+
+@include blockquote(button){
+    padding: 10px 20px;
+    @include bRadius();
+    @include bgColor($theme-colors);
+    @include cursor();
+    color:$black;
+    &:disabled{
+        opacity: .7;
+        cursor: no-drop;
+    }
+}

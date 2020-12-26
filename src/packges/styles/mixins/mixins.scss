@@ -1,0 +1,26 @@
+$namespace: 'i-think-';
+@mixin blockquote($block){
+    $blockName:$namespace+$block !global;
+    .#{$blockName}{
+        @content;
+    }
+}
+
+@mixin bgColor($color){
+    @each $type,$value in $color{
+         &.#{$blockName}-#{$type}{
+            background:#{$value};
+        }
+        // &.i-think-#{$type}{
+        //     background: #{$value};
+        // }
+    }
+}
+
+@mixin bRadius($radius:$border-radius) {
+    border-radius: $radius+$px;
+}
+
+@mixin cursor() {
+   cursor: pointer; 
+}
