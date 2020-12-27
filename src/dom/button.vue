@@ -7,6 +7,7 @@
         <tButton disabled>disabled</tButton>
     </div>
 </template>
+
 <script lang="ts">
 import { defineComponent } from 'vue'
 import tButton from '../packges/button'
