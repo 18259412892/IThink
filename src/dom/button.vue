@@ -26,7 +26,15 @@
          <tButton type="success" size="large" icon="ins" num="24">大</tButton>
          <tButton type="success" size="large" loading>大</tButton>
        <hr/>
-       <Icon num="20"/>
+         <br/>
+        <br/>
+          <br/>
+        <br/>
+        <h2>packges/styles/fonts 字体图标库  iconfontwpk wpk-ui-icon-xxx 输入xxx的标注即可</h2>
+       <Icon num="40" icon="tuite"/>
+       <Icon num="30" icon="burenshini"/>
+       <Icon num="50" icon="dianhua1"/>
+       <Icon num="20" icon="lianshu"/>
         <br/>
         <br/>
         <Loading/>

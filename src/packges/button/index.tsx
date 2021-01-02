@@ -67,14 +67,8 @@ export default createComponent({
       return (
         <button class={classes} disabled={ loading || disabled}>
           {
-            loading ?
-            <span style="    display: flex;align-items: center;">
-              {loading && <ILoading/>}
-              {!loading && icon && <ITicon icon={icon} num={num}/>}
-              <span>{slots}</span>
-            </span>:
             <>
-              {loading && <ILoading/>}
+              {loading && <ITicon  num={num} class="loading"/>}
               {!loading && icon && <ITicon icon={icon} num={num}/>}
               <span>{slots}</span>
             </>

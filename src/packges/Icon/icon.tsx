@@ -9,7 +9,7 @@ export default createComponent({
   props:{
     icon:{
       type: String,
-      default: 'qianbi'
+      default: ''
     },
     num:{
       type: String,
