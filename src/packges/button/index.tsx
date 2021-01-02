@@ -14,6 +14,9 @@ export type ButtonType =
   | 'light'
   | 'dark'
   | 'danger';
+export type ButtonSize = 'large' | 'middle' | 'small';
+import ITicon from '../Icon/icon';
+import ILoading from '../Loading/loading';
 export default createComponent({
   props: {
     text: String,
@@ -24,16 +27,37 @@ export default createComponent({
     disabled: {
       type: Boolean,
       default: false
+    },
+    size:{
+      type:String as PropType<ButtonSize>,
+      default: 'middle'
+    },
+    icon: {
+      type: String,
+      default: ''
+    },
+    num:{
+      type: String,
+      default: ''
+    },
+    loading:{
+      type: Boolean,
+      default: false
     }
   },
   setup(props, { emit, slots }) {
     const {
       type,
-      disabled
+      disabled,
+      size,
+      icon,
+      num,
+      loading
     } = props;
     const classes = [
       bem([
         type,
+        size,
         {
           disabled
         }
@@ -41,7 +65,15 @@ export default createComponent({
     ]
     return () => {
       return (
-        <button  class={classes} disabled={disabled}>{slots}</button>
+        <button class={classes} disabled={ loading || disabled}>
+          {
+            <>
+              {loading && <ITicon  num={num} class="loading"/>}
+              {!loading && icon && <ITicon icon={icon} num={num}/>}
+              <span>{slots}</span>
+            </>
+          }
+        </button>
       )
     }
   }
