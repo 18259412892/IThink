@@ -1,12 +1,26 @@
 
 @include blockquote(button){
-    padding: 10px 20px;
+    padding: 0px 20px;
     @include bRadius();
     @include bgColor($theme-colors);
     @include cursor();
-    color:$black;
+    color:$white;
     &:disabled{
-        opacity: .7;
+        opacity: .6;
         cursor: no-drop;
+    }
+    	// large | middle | small
+    &-large{
+        height:40+$px;
+        line-height:40+$px;
+        padding: 0px 25px;
+    }
+    &-middle{
+        height:32+$px;
+        line-height:32+$px;
+    }
+     &-small{
+        height:28+$px;
+        line-height:28+$px;
     }
 }
