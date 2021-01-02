@@ -4,7 +4,16 @@
     @include bRadius();
     @include bgColor($theme-colors);
     @include cursor();
+     &:active,
+    &:hover,
+    &-disabled:hover {
+        // @include status($color-list-active);
+    }
     color:$white;
+    .i-think-icon {
+        margin-right:2+$px;
+        font-size:14px;
+    }
     &:disabled{
         opacity: .6;
         cursor: no-drop;
@@ -23,4 +32,22 @@
         height:28+$px;
         line-height:28+$px;
     }
+    @-webkit-keyframes rotation {
+        from {
+        -webkit-transform: rotate(0deg);
+        }
+
+        to {
+        -webkit-transform: rotate(360deg);
+        }
+    }
+
+    .loading {
+        -webkit-transform: rotate(360deg);
+        animation: rotation 2s linear infinite;
+        -moz-animation: rotation 2s linear infinite;
+        -webkit-animation: rotation 2s linear infinite;
+        -o-animation: rotation 2s linear infinite;
+    }
+   
 }

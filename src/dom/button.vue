@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <tButton @click="btns">默认 {{d}}</tButton>
+    <div style="background:#ccc">
+        <tButton @click="btns" >默认 {{d}}</tButton>
         <tButton type="success">success</tButton>
-        <tButton type="error">error</tButton>
+        <tButton type="error" loading>error</tButton>
         <tButton type="info">info</tButton>
         <tButton type="warning">warning</tButton>
         <tButton type="dark">dark</tButton>
@@ -20,35 +20,56 @@
         <br/>
         <br/>
         <br/>
+        <b>图标</b>
+         <tButton type="success" size="small" icon="tuite">小</tButton>
+         <tButton type="success" size="middle"  icon="lianshu">小</tButton>
+         <tButton type="success" size="large" icon="ins" num="24">大</tButton>
+         <tButton type="success" size="large" loading>大</tButton>
        <hr/>
+       <Icon num="20"/>
+        <br/>
+        <br/>
+        <Loading/>
+        <Loading num="2"/>
+        <Loading  num="3"/>
+        <Loading  num="4"/>
+        <Loading num="5"/>
+        <Loading num="6"/>
+        <Loading num="7"/>
+        <Loading num="8"/>
     </div>
 </template>
 <script lang="ts">
 import { defineComponent,reactive,toRefs } from 'vue'
 import tButton from '../packges/button'
+import Icon from '../packges/Icon/icon'
+import Loading from '../packges/Loading/loading'
 export default defineComponent({
+     name: 'iTButton',
     components:{
-        tButton
+        tButton,
+        Icon,
+        Loading
     },
     setup () {
         const state = reactive({
             d:1
         })
-        const methods  = {
-            btns(){
+        const methods1  = {
+            btns: function(){
                 alert(2)
             }
         }
         return {
             ...toRefs(state),
-            ...methods
+            ...methods1
         }
     }
 })
 </script>
 
 <style scoped lang="scss">
-@import '@/packges/styles/index.scss';
+
 button{
     margin:0 10px;
 }
