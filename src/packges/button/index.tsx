@@ -14,6 +14,7 @@ export type ButtonType =
   | 'light'
   | 'dark'
   | 'danger';
+export type ButtonSize = 'large' | 'middle' | 'small';
 export default createComponent({
   props: {
     text: String,
@@ -24,16 +25,22 @@ export default createComponent({
     disabled: {
       type: Boolean,
       default: false
+    },
+    size:{
+      type:String as PropType<ButtonSize>,
+      default: 'middle'
     }
   },
   setup(props, { emit, slots }) {
     const {
       type,
-      disabled
+      disabled,
+      size
     } = props;
     const classes = [
       bem([
         type,
+        size,
         {
           disabled
         }
