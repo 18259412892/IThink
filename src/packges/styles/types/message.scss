@@ -1,0 +1,78 @@
+@include blockquote(message){
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.55);
+    font-size: 16px;
+    font-variant: tabular-nums;
+    line-height: 1;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    width: 100%;
+    pointer-events: none;
+    
+    .qmsg-item{
+        padding: 8px;
+        text-align: center;
+        -webkit-animation-duration: .3s;
+        animation-duration: .3s;
+        position: relative;
+        .content{
+            text-align: left;
+            position: relative;
+            display: inline-block;
+            padding: 10px 16px;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.15);
+            pointer-events: all;
+            max-width: 80%;
+            min-width: 80px;
+            .qmsg-icon{
+                display: inline-block;
+                color: inherit;
+                font-style: normal;
+                line-height: 0;
+                text-align: center;
+                text-transform: none;
+                vertical-align: -.125em;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                position: relative;
+                top: 1px;
+                margin-right: 8px;
+                font-size: 16px;
+            }
+            .qmsg-icon-close{
+                position: absolute;
+                top: 11px;
+                right: 5px;
+                padding: 0;
+                overflow: hidden;
+                font-size: 12px;
+                line-height: 22px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                color: rgba(0,0,0,.45);
+                transition: color .3s;
+            }
+        }
+        .animate-turn {
+            animation: MessageTurn 1s linear infinite;
+            -webkit-animation: MessageTurn 1s linear infinite
+        }
+        .animate-colse{
+            animation:  MessageShake 1s linear infinite;
+            -webkit-animation: MessageShake linear infinite
+        }
+       
+
+    }
+}
