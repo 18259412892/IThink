@@ -87,7 +87,7 @@ export default function Message(options:optionsProps={}){
       dom.style.top = dom.clientHeight * (len - 1)+ 'px';
     },
     removeFn(){
-      // this.doms.remove();
+      this.doms.remove();
       let _colse = this.doms.querySelectorAll('.qmsg-icon-close');
       _colse.forEach(function(item:any,index:number){
         item.addEventListener('click',function(ev:any){
@@ -133,7 +133,7 @@ export default function Message(options:optionsProps={}){
       this.dom();
       console.log('loading')
     },
-    closeAll(){
+    closeAll():void{
       let domsAll = document.querySelectorAll('.i-think-message');
       if(domsAll){
         Array.from(domsAll).forEach(item=>{
