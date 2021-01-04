@@ -2,7 +2,10 @@
 
 ## Project setup
 ```
-yarn install
+npm install cnpm -g --registry=https://registry.npm.taobao.org
+cnpm install -g sass-loader node-sass
+cnpm install node-sass --registry=https://registry.npm.taobao.org
+yarn config set registry https://registry.npm.taobao.org
 ```
 
 ### Compiles and hot-reloads for development
