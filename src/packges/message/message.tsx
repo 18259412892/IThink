@@ -23,7 +23,6 @@ export default function Message(options:{}){
     showClose = false,
     closeAll = false
   } = options;
-  console.log(options,'--options')
   const classes = [
     bem([
       `${type}`
