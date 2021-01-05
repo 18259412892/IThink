@@ -1,27 +1,16 @@
 import { PropType, CSSProperties } from 'vue';
-
+import { optionfnProps,messagesProps } from '../types/types';
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_SURROUND } from '../utils/constant';
 // Components
 const [createComponent, bem] = createNamespace('message');
-interface optionsProps {
-  type?: string
-  timeout?: number//2500,
-  right?: boolean
-  content?: string// = "" || _msg[type],
-  position?: string// = right ? 'right': 'center',
-  showClose?: boolean
-  closeAll?: boolean
-}
+
 interface iconProps{
   [index:string]:string
 }
 
-interface optionfnProps  {
-  [propName:string] : any;
-};
-export default function Message(options:optionsProps={}){
+export default function Message(options:messagesProps={}){
   const _msg: iconProps = {
     info: 'info',
     warning: 'warning',
