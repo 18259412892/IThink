@@ -74,8 +74,8 @@ export default function Message(options:optionsProps={}){
       return _html;
     },
     dom(){
-      let dom:classesProps = document.createElement('div');
-      dom.className = classes;
+      let dom:HTMLDivElement  = document.createElement('div');
+      dom!.className = classes.toString();
       let qmsgItem = document.createElement('div');
       let contentDom = document.createElement('div');
       qmsgItem.className = 'qmsg-item';
@@ -142,10 +142,10 @@ export default function Message(options:optionsProps={}){
       this.dom();
       console.log('loading')
     },
-    closeAll():void{
+    closeAll(){
       let domsAll = document.querySelectorAll('.i-think-message');
       if(domsAll){
-        Array.from(domsAll).forEach(item=>{
+        Array.from(domsAll).forEach((item:any)=>{
           let num = 1;
           const Imte = setInterval(()=>{
             if(num < 0){
@@ -153,7 +153,7 @@ export default function Message(options:optionsProps={}){
               item.remove();
             }
             num = num - .3
-            item.style.opacity= num
+            item!.style.opacity= num
           },80)
         })
       }
