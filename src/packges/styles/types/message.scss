@@ -28,7 +28,7 @@
             padding: 10px 16px;
             background: #fff;
             border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,.15);
+            @include boxShadow();
             pointer-events: all;
             max-width: 80%;
             min-width: 80px;
