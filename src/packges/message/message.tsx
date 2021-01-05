@@ -1,33 +1,16 @@
 import { PropType, CSSProperties } from 'vue';
-
+import { optionfnProps,messagesProps } from '../types/types';
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_SURROUND } from '../utils/constant';
 // Components
 const [createComponent, bem] = createNamespace('message');
-interface optionsProps {
-  type?: string
-  timeout?: number//2500,
-  right?: boolean
-  content?: string// = "" || _msg[type],
-  position?: string// = right ? 'right': 'center',
-  showClose?: boolean
-  closeAll?: boolean
-}
+
 interface iconProps{
   [index:string]:string
 }
 
-interface optionfnProps  {
-  [propName:string] : any;
-};
-interface classesProps{
-  className?: any,
-  appendChild: any;
-  style?: any;
-  clientHeight?: any;
-}
-export default function Message(options:optionsProps={}){
+export default function Message(options:messagesProps={}){
   const _msg: iconProps = {
     info: 'info',
     warning: 'warning',
@@ -88,12 +71,17 @@ export default function Message(options:optionsProps={}){
       let len = document.querySelectorAll('.i-think-message').length;
       this.doms = dom;
       if(!showClose){
-        this.remove(dom)
+         setTimeout(()=>{
+          this.remove(dom)
+        },timeout)
       } else {
-        this.removeFn()
+        setTimeout(()=>{
+          this.removeFn()
+        },timeout)
       }
       if(len == 1) return false;
       dom.style.top = dom.clientHeight * (len - 1)+ 'px';
+     
     },
     removeFn(){
       this.doms.remove();

@@ -1,5 +1,5 @@
 <template>
-    <div style="background:#ccc">
+    <div style="background:#ccc;padding:20px; ">
         <tButton @click="btns" >默认 {{d}}</tButton>
         <tButton type="success">success</tButton>
         <tButton type="error" loading>error</tButton>

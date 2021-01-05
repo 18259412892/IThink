@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/message',
     name: 'message',
     component: () => import(/* webpackChunkName: "about" */ '../dom/message.vue')
+  },
+  {
+    path: '/alert',
+    name: 'alert',
+    component: () => import(/* webpackChunkName: "about" */ '../dom/alert.vue')
   }
 ]
 
