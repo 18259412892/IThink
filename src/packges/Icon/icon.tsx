@@ -3,6 +3,7 @@ import { PropType, CSSProperties } from 'vue';
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_SURROUND } from '../utils/constant';
+import '../styles/fonts/iconfont.js';
 // Components
 const [createComponent, bem] = createNamespace('icon');
 export default createComponent({
@@ -28,7 +29,12 @@ export default createComponent({
       ])
     ]
     return ()=>{
-      return <i class={classes} style={{fontSize:num+'px'}}></i>
+      return  <>
+              <i class={classes} style={{fontSize:num+'px'}}></i>
+              {/* <svg class="icon" aria-hidden="true">
+                <use str></use>
+              </svg> */}
+      </>
     }
   },
 })

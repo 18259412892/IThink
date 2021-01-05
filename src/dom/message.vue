@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding:20px;">
         <h2>message提示</h2>
         <tButton class="btn" type='info' @click="info">info提示</tButton>
         <tButton class="btn" type='error' @click="error">error提示</tButton>

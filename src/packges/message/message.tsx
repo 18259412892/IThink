@@ -21,12 +21,6 @@ interface iconProps{
 interface optionfnProps  {
   [propName:string] : any;
 };
-interface classesProps{
-  className?: any,
-  appendChild: any;
-  style?: any;
-  clientHeight?: any;
-}
 export default function Message(options:optionsProps={}){
   const _msg: iconProps = {
     info: 'info',
@@ -88,12 +82,17 @@ export default function Message(options:optionsProps={}){
       let len = document.querySelectorAll('.i-think-message').length;
       this.doms = dom;
       if(!showClose){
-        this.remove(dom)
+         setTimeout(()=>{
+          this.remove(dom)
+        },timeout)
       } else {
-        this.removeFn()
+        setTimeout(()=>{
+          this.removeFn()
+        },timeout)
       }
       if(len == 1) return false;
       dom.style.top = dom.clientHeight * (len - 1)+ 'px';
+     
     },
     removeFn(){
       this.doms.remove();
