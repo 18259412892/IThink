@@ -18,6 +18,15 @@ interface iconProps{
   [index:string]:string
 }
 
+interface optionfnProps  {
+  [propName:string] : any;
+};
+interface classesProps{
+  className?: any,
+  appendChild: any;
+  style?: any;
+  clientHeight?: any;
+}
 export default function Message(options:optionsProps={}){
   const _msg: iconProps = {
     info: 'info',
@@ -49,7 +58,7 @@ export default function Message(options:optionsProps={}){
     loading: '<svg class="animate-turn" width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4" stroke="#1890ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 24C36 17.3726 30.6274 12 24 12C17.3726 12 12 17.3726 12 24C12 30.6274 17.3726 36 24 36V36" stroke="#1890ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     close: '<svg width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M14 14L34 34" stroke="#909399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 34L34 14" stroke="#909399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
-  let _options =  {
+  let _options:optionfnProps  =  {
     create(body:any){
       let dom = document.createElement('div');
       body.appendChild(dom);
@@ -65,7 +74,7 @@ export default function Message(options:optionsProps={}){
       return _html;
     },
     dom(){
-      let dom = document.createElement('div');
+      let dom:classesProps = document.createElement('div');
       dom.className = classes;
       let qmsgItem = document.createElement('div');
       let contentDom = document.createElement('div');
@@ -133,7 +142,7 @@ export default function Message(options:optionsProps={}){
       this.dom();
       console.log('loading')
     },
-    closeAll():void{
+    closeAll(){
       let domsAll = document.querySelectorAll('.i-think-message');
       if(domsAll){
         Array.from(domsAll).forEach(item=>{
