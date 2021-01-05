@@ -142,7 +142,7 @@ export default function Message(options:optionsProps={}){
       this.dom();
       console.log('loading')
     },
-    closeAll(){
+    closeAll():void{
       let domsAll = document.querySelectorAll('.i-think-message');
       if(domsAll){
         Array.from(domsAll).forEach(item=>{
