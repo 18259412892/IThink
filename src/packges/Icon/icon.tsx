@@ -29,12 +29,11 @@ export default createComponent({
       ])
     ]
     return ()=>{
-      return  <>
+      return  
               <i class={classes} style={{fontSize:num+'px'}}></i>
               {/* <svg class="icon" aria-hidden="true">
                 <use str></use>
               </svg> */}
-      </>
     }
   },
 })
