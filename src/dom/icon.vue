@@ -1,5 +1,7 @@
 <template>
     <div  style="padding:20px;">
+     <h2>packges/styles/fonts 字体图标库  iconfontwpk wpk-ui-icon-xxx 输入xxx的标注即可</h2>
+      <br/>
         <h2>icon 默认类型</h2>
         <div style="margin-top:30px" class="icon-types">
             <tIcon/>
