@@ -69,7 +69,7 @@ export default createComponent({
           {
             <>
               {loading && <i class="loading"/>}
-              {!loading && icon && <ITicon icon={icon} num={num}/>}
+              {!loading && icon && <ITicon icon={icon} size={num}/>}
               <span>{slots}</span>
             </>
           }
