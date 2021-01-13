@@ -68,8 +68,8 @@ export default createComponent({
         <button class={classes} disabled={ loading || disabled}>
           {
             <>
-              {loading && <ITicon  num={num} class="loading"/>}
-              {!loading && icon && <ITicon icon={icon} num={num}/>}
+              {loading && <i class="loading"/>}
+              {!loading && icon && <ITicon icon={icon} size={num}/>}
               <span>{slots}</span>
             </>
           }

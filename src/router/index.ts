@@ -8,6 +8,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/home/home.vue')
   },
   {
+    path: '/icon',
+    name: 'icon',
+    component: () => import(/* webpackChunkName: "about" */ '../dom/icon.vue')
+  },
+  {
     path: '/button',
     name: 'button',
     component: () => import(/* webpackChunkName: "about" */ '../dom/button.vue')
@@ -16,6 +21,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/message',
     name: 'message',
     component: () => import(/* webpackChunkName: "about" */ '../dom/message.vue')
+  },
+  {
+    path: '/alert',
+    name: 'alert',
+    component: () => import(/* webpackChunkName: "about" */ '../dom/alert.vue')
   }
 ]
 

@@ -1,24 +1,16 @@
 import { PropType, CSSProperties } from 'vue';
-
+import { optionfnProps,messagesProps } from '../types/types';
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_SURROUND } from '../utils/constant';
 // Components
 const [createComponent, bem] = createNamespace('message');
-interface optionsProps {
-  type?: string
-  timeout?: number//2500,
-  right?: boolean
-  content?: string// = "" || _msg[type],
-  position?: string// = right ? 'right': 'center',
-  showClose?: boolean
-  closeAll?: boolean
-}
+
 interface iconProps{
   [index:string]:string
 }
 
-export default function Message(options:optionsProps={}){
+export default function Message(options:messagesProps={}){
   const _msg: iconProps = {
     info: 'info',
     warning: 'warning',
@@ -49,7 +41,7 @@ export default function Message(options:optionsProps={}){
     loading: '<svg class="animate-turn" width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4" stroke="#1890ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 24C36 17.3726 30.6274 12 24 12C17.3726 12 12 17.3726 12 24C12 30.6274 17.3726 36 24 36V36" stroke="#1890ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     close: '<svg width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M14 14L34 34" stroke="#909399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 34L34 14" stroke="#909399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
-  let _options =  {
+  let _options:optionfnProps  =  {
     create(body:any){
       let dom = document.createElement('div');
       body.appendChild(dom);
@@ -65,8 +57,8 @@ export default function Message(options:optionsProps={}){
       return _html;
     },
     dom(){
-      let dom = document.createElement('div');
-      dom.className = classes;
+      let dom:HTMLDivElement  = document.createElement('div');
+      dom!.className = classes.toString();
       let qmsgItem = document.createElement('div');
       let contentDom = document.createElement('div');
       qmsgItem.className = 'qmsg-item';
@@ -79,15 +71,20 @@ export default function Message(options:optionsProps={}){
       let len = document.querySelectorAll('.i-think-message').length;
       this.doms = dom;
       if(!showClose){
-        this.remove(dom)
+         setTimeout(()=>{
+          this.remove(dom)
+        },timeout)
       } else {
-        this.removeFn()
+        setTimeout(()=>{
+          this.removeFn()
+        },timeout)
       }
       if(len == 1) return false;
       dom.style.top = dom.clientHeight * (len - 1)+ 'px';
+     
     },
     removeFn(){
-      // this.doms.remove();
+      this.doms.remove();
       let _colse = this.doms.querySelectorAll('.qmsg-icon-close');
       _colse.forEach(function(item:any,index:number){
         item.addEventListener('click',function(ev:any){
@@ -136,7 +133,7 @@ export default function Message(options:optionsProps={}){
     closeAll(){
       let domsAll = document.querySelectorAll('.i-think-message');
       if(domsAll){
-        Array.from(domsAll).forEach(item=>{
+        Array.from(domsAll).forEach((item:any)=>{
           let num = 1;
           const Imte = setInterval(()=>{
             if(num < 0){
@@ -144,7 +141,7 @@ export default function Message(options:optionsProps={}){
               item.remove();
             }
             num = num - .3
-            item.style.opacity= num
+            item!.style.opacity= num
           },80)
         })
       }
