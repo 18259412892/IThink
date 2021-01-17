@@ -8,7 +8,7 @@ const [createComponent, bem] = createNamespace('alert');
 import tButton from '../button/index'
 export default function Message(options:alertProps={}){
   let {
-    type = 'info',
+    type = 'primary',
     message = 'alert弹窗',
     timeout = 2500,
     tip = '1',
@@ -29,12 +29,12 @@ export default function Message(options:alertProps={}){
     },
     _alertHtml() {
       let str = `
-            <div class="i-think-header">
+            <div class="i-think-header i-think-button i-think-button-${type}">
               ${title}
             </div>
             <div class="i-think-content">${message}</div>
             <div class="i-think-footer">
-              <button class="i-think-button i-think-button-primary i-think-button-middle" >确认</button>
+              <button class="i-think-button i-think-button-${type} i-think-button-middle" >确认</button>
             </div>
       `;
 

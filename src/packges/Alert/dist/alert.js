@@ -6,7 +6,7 @@ var utils_1 = require("../utils");
 var _a = utils_1.createNamespace('alert'), createComponent = _a[0], bem = _a[1];
 function Message(options) {
     if (options === void 0) { options = {}; }
-    var _a = options.type, type = _a === void 0 ? 'info' : _a, _b = options.message, message = _b === void 0 ? 'alert弹窗' : _b, _c = options.timeout, timeout = _c === void 0 ? 2500 : _c, _d = options.tip, tip = _d === void 0 ? '1' : _d, _e = options.title, title = _e === void 0 ? 'title' : _e, _f = options.ok, ok = _f === void 0 ? function () { } : _f;
+    var _a = options.type, type = _a === void 0 ? 'primary' : _a, _b = options.message, message = _b === void 0 ? 'alert弹窗' : _b, _c = options.timeout, timeout = _c === void 0 ? 2500 : _c, _d = options.tip, tip = _d === void 0 ? '1' : _d, _e = options.title, title = _e === void 0 ? 'title' : _e, _f = options.ok, ok = _f === void 0 ? function () { } : _f;
     var classes = [
         bem([
             "" + type
@@ -18,7 +18,7 @@ function Message(options) {
             return str;
         },
         _alertHtml: function () {
-            var str = "\n            <div class=\"i-think-header\">\n              " + title + "\n            </div>\n            <div class=\"i-think-content\">" + message + "</div>\n            <div class=\"i-think-footer\">\n              <button class=\"i-think-button i-think-button-primary i-think-button-middle\" >\u786E\u8BA4</button>\n            </div>\n      ";
+            var str = "\n            <div class=\"i-think-header i-think-button i-think-button-" + type + "\">\n              " + title + "\n            </div>\n            <div class=\"i-think-content\">" + message + "</div>\n            <div class=\"i-think-footer\">\n              <button class=\"i-think-button i-think-button-" + type + " i-think-button-middle\" >\u786E\u8BA4</button>\n            </div>\n      ";
             return str;
         },
         confirmFn: function () {

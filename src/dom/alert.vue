@@ -13,8 +13,13 @@
         </div>
         <h2>alert弹窗 tip = '2'</h2>
         <div>
-            <tButton @click="success('alert')">alert弹窗</tButton>
-            <tButton @click="success('alert1')">alert弹窗</tButton>
+            <tButton @click="success('primary',1)">alert弹窗</tButton>
+            <tButton type="success"  @click="success('success',1)">success alert弹窗</tButton>
+            <tButton type="error"  @click="success('error',1)">error alert弹窗</tButton>
+            <tButton type="info"  @click="success('info',1)">info alert弹窗</tButton>
+            <tButton type="warning"  @click="success('warning',1)">warning alert弹窗</tButton>
+            <tButton type="dark"  @click="success('dark',1)">dark alert弹窗</tButton>
+            <tButton type="danger"  @click="success('danger',1)">danger alert弹窗</tButton>
         </div>
     </div>
 </template>
@@ -29,19 +34,12 @@ export default defineComponent({
     },
     setup () {
         const _methods = {
-            success(type:string){
-                if(['alert1','alert'].includes(type)){
+            success(type:string,index:number){
+                if(index == 1){
                     let _parms = {};
-                    if(type == 'alert'){
-                        _parms = {
-                            message: '<div><b>tip1</b></div>',
-                            ok(){
-                                alert(2)
-                            }
-                        }
-                    }
                     tAlert({
                         tip: '2',
+                        type,
                         message:`提示弹窗`,
                         ..._parms
                     })
