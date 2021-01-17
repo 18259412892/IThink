@@ -73,11 +73,11 @@ export default function Message(options:messagesProps={}){
       if(!showClose){
          setTimeout(()=>{
           this.remove(dom)
-        },timeout)
+        },timeout  as any)
       } else {
         setTimeout(()=>{
           this.removeFn()
-        },timeout)
+        },timeout  as any)
       }
       if(len == 1) return false;
       dom.style.top = dom.clientHeight * (len - 1)+ 'px';
@@ -108,7 +108,7 @@ export default function Message(options:messagesProps={}){
         if(dom){
           dom.remove();
         }
-      }, timeout);
+      }, timeout   as any );
     },
     info(){
       this.dom();

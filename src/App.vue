@@ -6,6 +6,7 @@
     <router-link  to="/icon" class="btns">icon</router-link>
     <router-link  to="/message" class="btns">message</router-link>
     <router-link  to="/alert" class="btns">alert</router-link>
+    <router-link  to="/confirm" class="btns">confirm</router-link>
   </div>
   <router-view/>
  </div>
