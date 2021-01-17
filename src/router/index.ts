@@ -26,6 +26,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/alert',
     name: 'alert',
     component: () => import(/* webpackChunkName: "about" */ '../dom/alert.vue')
+  },
+  {
+    path: '/confirm',
+    name: 'confirm',
+    component: () => import(/* webpackChunkName: "about" */ '../dom/confirm.vue')
   }
 ]
 

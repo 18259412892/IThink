@@ -17,7 +17,7 @@ export interface optionfnProps  {
 */
 export interface commonProps{
   type?: string; //类型
-  timeout?: number; //时间
+  timeout?: string | number; //时间
 }
 
 /**
@@ -28,7 +28,10 @@ export interface commonProps{
 * @param {*}  val
 */
 export interface alertProps extends commonProps{
-  message?: string|HTMLDivElement; //提示内容
+  message?: string | HTMLDivElement; //提示内容
+  tip?: string;
+  title?: string;
+  ok?: any;
 }
 
 /**

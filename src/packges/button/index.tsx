@@ -16,7 +16,6 @@ export type ButtonType =
   | 'danger';
 export type ButtonSize = 'large' | 'middle' | 'small';
 import ITicon from '../Icon/icon';
-import ILoading from '../Loading/loading';
 export default createComponent({
   props: {
     text: String,
