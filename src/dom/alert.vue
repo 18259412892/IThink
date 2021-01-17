@@ -1,7 +1,7 @@
 <template>
     <div  style="padding:20px;">
         <h2>alert弹窗 tip = '1' 默认</h2>
-        <div style="margin-top:300px">
+        <div style="margin-top:100px">
         <tButton   @click="success('primary')">alert弹窗</tButton>
         <tButton type="success"  @click="success('success')">success alert弹窗</tButton>
         <tButton type="error"  @click="success('error')">error alert弹窗</tButton>
