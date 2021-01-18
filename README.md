@@ -1,4 +1,4 @@
-# app01
+# IThink  Vue3.0 + TypeScript
 
 ## Project setup
 ```
